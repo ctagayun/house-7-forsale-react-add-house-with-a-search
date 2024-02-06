@@ -132,6 +132,12 @@ const App = () => {
       country: "USA",
       price: 600900,
     },
+    {
+      id: 5,
+      address: "1256 Macapagal Road",
+      country: "Philippines",
+      price: 700900,
+    },
   ];
  
   //1. Stuff related Search component state
