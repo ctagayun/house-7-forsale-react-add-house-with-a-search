@@ -133,11 +133,12 @@ const App = () => {
       price: 600900,
     },
   ];
-  
  
+  //1. Stuff related Search component state
   const [stateOfSearchComponent, setSearchTerm] = React.useState(
     localStorage.getItem('search') || 'Italy');
 
+  //2. Stuff related Search component state
   //We'll use React's useEffect Hook to trigger the desired 
   //side-effect each time the stateOfSearchComponent changes.
   //The DESIRED side-effect is to store the state it in the localstorage
@@ -145,6 +146,7 @@ const App = () => {
       localStorage.setItem('search', stateOfSearchComponent);
     }, [stateOfSearchComponent]);
    
+  //3. Stuff related Search component state
   const searchHandler = (event) => {
     setSearchTerm(event.target.value); //tell the state updater function  to update the stateOfSearchComponent.
        localStorage.setItem('search', event.target.value);
