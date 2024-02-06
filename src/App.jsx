@@ -140,7 +140,7 @@ const App = () => {
 
   //We'll use React's useEffect Hook to trigger the desired 
   //side-effect each time the stateOfSearchComponent changes.
-  //The desired side-effect is to store the state it in the localstorage
+  //The DESIRED side-effect is to store the state it in the localstorage
   React.useEffect(() => {
       localStorage.setItem('search', stateOfSearchComponent);
     }, [stateOfSearchComponent]);
