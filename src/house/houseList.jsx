@@ -89,7 +89,7 @@ const HouseList = (props) => {
           </tr>
         </thead>
         <tbody>
-          {houseState.map((record) => ( //first time in list has already been populated by useState
+          {props.list.map((record) => ( //first time in list has already been populated by useState
             //Instantiate the HouseRow component and pass each record
             //to HouseRow component as props.
             //house={record} means access of the "record"  and 
@@ -98,9 +98,9 @@ const HouseList = (props) => {
           ))}
         </tbody>
       </table>
-      <button className="btn btn-primary" onClick={addHouse} >
+      {/* <button className="btn btn-primary" onClick={addHouse} >
         Add House
-      </button>
+      </button> */}
     </>
   );
 };

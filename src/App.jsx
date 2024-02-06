@@ -123,7 +123,7 @@ const App = () => {
      filter the stories, we will instantiate the state in the App 
      component instead of in the Search component
   */
-  const [stateOfSearchComponent, setSearchTerm] = React.useState('');
+  const [stateOfSearchComponent, setSearchTerm] = React.useState('Italy');
 
   /*  callback handler
    This is the callback handler for the Search component. 
