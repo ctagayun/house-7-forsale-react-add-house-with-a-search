@@ -1,5 +1,18 @@
 /*
-  React Controlled Components Task:
+    This exercise will implement a feature that will enable Search component
+ to remember the most recent searched. 
+
+    Let's implement this feature by using a side-effect to store the recent search 
+ from the browser's local storage and retrieve it upon the initial component 
+ initialization. First, use the local storage to store the searchTerm accompanied
+  by an identifier whenever a user types into the HTML input field:
+
+   What is useEffect?
+      - Use useEffect Hook to trigger the desired side-effect each time 
+     the searchTerm changes:
+
+ ==============================================================
+ Previous Task: React Controlled Components Task:
     - we modified the Search component. We added the value attribute
       
     <div className="float-start ">
@@ -109,35 +122,34 @@ const App = () => {
     },
     {
       id: 3,
+      address: "1053 Lake Side Drive",
+      country: "Netherlands",
+      price: 600500,
+    },
+    {
+      id: 4,
       address: "1916 Rustic Oak Road",
       country: "USA",
-      price: 600000,
+      price: 600900,
     },
   ];
   
-  console.log('A- App component is rendered. This renders only on first rendering of the App')
+ 
+  const [stateOfSearchComponent, setSearchTerm] = React.useState(
+    localStorage.getItem('search') || 'Italy');
 
-  /* useState
-     This useState is one of the useState for Search Component
-     If the App component is interested in the searchTerm state to 
-     filter the stories, we will instantiate the state in the App 
-     component instead of in the Search component
-  */
-  const [stateOfSearchComponent, setSearchTerm] = React.useState('Italy');
-
-  /*  callback handler
-   This is the callback handler for the Search component. 
-   It receives the value that was passed by the Search component 
-   whenever the user types something in the Search component. 
-   For example when you type Tochi in the search input field 
-   the target.value "Tochi" is passed to this callback handler.
-     The handler then calls the state updater setSearchTerm()
-   to update the searchState
-   */
+  //We'll use React's useEffect Hook to trigger the desired 
+  //side-effect each time the stateOfSearchComponent changes.
+  //The desired side-effect is to store the state it in the localstorage
+  React.useEffect(() => {
+      localStorage.setItem('search', stateOfSearchComponent);
+    }, [stateOfSearchComponent]);
+   
   const searchHandler = (event) => {
-    setSearchTerm(event.target.value); //tell the state updater function
-                                       //setSearchTerm to update the stateOfSearchComponent.
-      console.log('B - Value of data passed to parent component named App via ' +
+    setSearchTerm(event.target.value); //tell the state updater function  to update the stateOfSearchComponent.
+       localStorage.setItem('search', event.target.value);
+    
+     console.log('B - Value of data passed to parent component named App via ' +
          'Callback Handler is = ' + event.target.value);
       };
 
