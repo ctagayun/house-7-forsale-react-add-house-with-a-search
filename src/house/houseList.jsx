@@ -54,11 +54,11 @@ const HouseList = (props) => {
 */
  const addHouse = () => {
    //SetAddHouse is the state updater function 
-  //JavaScript's spread operator allows us to literally spread all key/value pairs 
-  //of an object to another object. This can also be done in React's JSX. 
-  //To do that use spread operator '...' to pass all the object's key/value pairs as 
-  //attribute/value pairs to a JSX element in this case 'item':
-  //    <Item key={item.objectID} {...item}>  ) 
+   //JavaScript's spread operator allows us to literally spread all key/value pairs 
+   //of an object to another object. This can also be done in React's JSX. 
+   //To do that use spread operator '...' to pass all the object's key/value pairs as 
+   //attribute/value pairs to a JSX element in this case 'item':
+   //    <Item key={item.objectID} {...item}>  ) 
    setAddHouse([
       ...houseState, //this is the state. It gets updated
                      //by the updater function - "setAddHouse"
